@@ -67,15 +67,19 @@ export function AuthButton() {
     )
   }
 
-  // 如果 Supabase 未配置，显示配置提示
+  // 如果 Supabase 未配置，不显示登录按钮（可选：也可以显示提示）
   if (!isSupabaseConfigured) {
+    // 如果不需要登录功能，可以返回 null 隐藏按钮
+    // return null
+    
+    // 或者显示一个简单的提示（可选）
     return (
       <Button 
         disabled 
-        className="bg-muted text-muted-foreground hover:bg-muted/90"
-        title="请配置 Supabase 环境变量，详情请参考 QUICK_START.md"
+        className="bg-muted text-muted-foreground hover:bg-muted/90 opacity-50"
+        title="Google 登录功能需要配置 Supabase。如果不需要登录功能，可以忽略此提示。"
       >
-        需要配置 Supabase
+        登录（可选）
       </Button>
     )
   }
