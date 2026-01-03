@@ -108,7 +108,7 @@ export function Editor() {
       console.error("生成图片时出错:", error)
       // 如果错误消息已经通过toast显示，就不再重复显示
       if (!error.message?.includes("API密钥")) {
-        toast.error(error.message || "生成图片时出错，请重试")
+      toast.error(error.message || "生成图片时出错，请重试")
       }
     } finally {
       setIsGenerating(false)
@@ -155,7 +155,7 @@ export function Editor() {
                         className="hidden"
                         id="image-upload"
                       />
-                      {uploadedImage ? (
+                        {uploadedImage ? (
                         <div className="space-y-3">
                           <img
                             src={uploadedImage}
@@ -174,13 +174,13 @@ export function Editor() {
                             更换图片
                           </Button>
                         </div>
-                      ) : (
+                        ) : (
                         <label htmlFor="image-upload" className="cursor-pointer block">
-                          <Upload className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
-                          <p className="text-sm text-muted-foreground">Click to upload or drag and drop</p>
-                          <p className="text-xs text-muted-foreground mt-1">Max 10MB</p>
+                            <Upload className="w-12 h-12 mx-auto mb-2 text-muted-foreground" />
+                            <p className="text-sm text-muted-foreground">Click to upload or drag and drop</p>
+                            <p className="text-xs text-muted-foreground mt-1">Max 10MB</p>
                         </label>
-                      )}
+                        )}
                     </div>
                     {!uploadedImage && (
                       <Button
